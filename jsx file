@@ -1,0 +1,55 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Programs from "./pages/Programs";
+import Apply from "./pages/Apply";
+import About from "./pages/About";
+import Employers from "./pages/Employers";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+
+export default function App() {
+  return (
+    <Router>
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <header className="bg-white shadow sticky top-0 z-40">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold">G</div>
+              <div>
+                <div className="text-lg font-semibold">Global Hire Assist</div>
+                <div className="text-xs text-gray-500">Your Trusted Visa Partner</div>
+              </div>
+            </Link>
+
+            <nav className="hidden md:flex items-center gap-4 text-sm">
+              <Link to="/" className="text-gray-600 hover:text-blue-700">Home</Link>
+              <Link to="/programs" className="text-gray-600 hover:text-blue-700">Programs</Link>
+              <Link to="/employers" className="text-gray-600 hover:text-blue-700">Employers</Link>
+              <Link to="/blog" className="text-gray-600 hover:text-blue-700">Blog</Link>
+              <Link to="/about" className="text-gray-600 hover:text-blue-700">About</Link>
+              <Link to="/contact" className="text-gray-600 hover:text-blue-700">Contact</Link>
+              <Link to="/apply" className="ml-2 inline-block px-3 py-1 bg-yellow-400 text-white rounded-md font-semibold">Apply</Link>
+            </nav>
+          </div>
+        </header>
+
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/apply" element={<Apply />} />
+            <Route path="/employers" element={<Employers />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <footer className="bg-white border-t">
+          <div className="max-w-6xl mx-auto p-6 text-sm text-gray-600">© {new Date().getFullYear()} Global Hire Assist — Mesa, Arizona</div>
+        </footer>
+      </div>
+    </Router>
+  );
+}
