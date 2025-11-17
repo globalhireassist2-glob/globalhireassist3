@@ -1,468 +1,261 @@
-<header>
-  <div class="brand">
-    <div class="logo">G</div>
-    <h2>GlobalHireAssist</h2>
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GlobalHireAssist — Visa & Employment Services</title>
+  <meta name="description" content="Trusted partner for global visa and employment opportunities & Employment Services">
+  <meta property="og:description" content="Trusted partner for global visa and employment opportunities. Expert guidance, secure processing, and professional support from start to finish.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#001f3f">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="apply.html">Apply</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="apply.html" class="cta">Start Application</a>
-  </nav>
-</header>
-   
-  <title>GlobalHireAssist3 • Your Trusted Visa Partner</title>  <!-- SEO/Open Graph -->  <meta property="og:title" content="GlobalHireAssist3 • Your Trusted Visa Partner" />
-  <!-- SEO Meta Tags -->
-<meta name="description" content="Global Hire Assist provides professional visa consultancy, international recruitment, and immigration support services." />
-<meta name="keywords" content="visa consultancy, work visa, recruitment, immigration services, Global Hire Assist" />
-<meta name="author" content="Global Hire Assist" />  <!-- Favicon -->
-<link rel="icon" type="image/png" href="https://globalhireassist.github.io/favicon.png"> <link rel="icon" href="data:;base64,iVBORw0KGgo=" />  <!--I> <link rel="stylesheet" href="styles.css"> -->  
-<style>
-:root {
-  --primary: #031b36;  /* Navy blue */
-  --secondary: #000000;
-  --accent: #0aa8e6;   /* Light blue accent */
-  --muted: #9aa3b1;
-  --card-bg: #ffffff10;
-}
-body {
-    background: var(--primary);
-    color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-    /* Global Reset */
-* {
-  box-sizing: border-box;
-}
+  <style>
+    :root{
+      --bg-1:#001f3f;
+      --bg-2:#00112a;
+      --accent:#007BFF;
+      --accent-dark:#0056b3;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,0.88);
+      --radius:8px;
+      --container-max:1200px;
+      --gap:40px;
+      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  background: var(--bg);
-  color: var(--white);
-  font-family: 'Inter', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+    html,body{height:100%;margin:0}
+    body{
+      font-family:var(--font-sans);
+      background:#fff;
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
 
-/* Links */
-a {
-  color: var(--blue);
-  text-decoration: none;
-  transition: 0.25s ease;
-}
-a:hover {
-  opacity: 0.8;
-}
+    /* Simple header */
+    header{
+      background:#ffffff;
+      border-bottom:1px solid #eef2f6;
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+    .site-wrap{
+      max-width:var(--container-max);
+      margin:0 auto;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{ font-weight:700; color:#0b2b4a; text-decoration:none; font-size:1.05rem }
+    nav a{ color:#0b2b4a; text-decoration:none; margin-left:18px; font-weight:600; }
+    nav a.btn-cta{ background:var(--accent); color:#fff; padding:8px 14px; border-radius:8px; }
 
-/* Modern Glass Header */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 36px;
-  background: rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+    /* HERO SECTION */
+    .hero{
+      background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+      color:var(--text);
+      padding:72px 20px;
+    }
 
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
+    .container{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      max-width:var(--container-max);
+      margin:0 auto;
+      gap:var(--gap);
+    }
 
-/* Premium Gradient Logo */
-.logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--blue), var(--gold));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: -0.5px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  color: #fff;
-}
+    .hero-text{
+      flex:1 1 520px;
+      min-width:260px;
+    }
 
-/* Navigation */
-nav {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-}
+    .hero-text h1{
+      font-size:clamp(1.75rem, 4vw, 3rem);
+      margin:0 0 18px;
+      line-height:1.12;
+      color:var(--text);
+    }
 
-nav a {
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--white);
-  transition: 0.25s ease;
-}
+    .hero-text p{
+      font-size:clamp(1rem, 2.2vw, 1.125rem);
+      margin:0 0 22px;
+      color:var(--muted);
+    }
 
-nav a:hover {
-  background: rgba(255,255,255,0.08);
-}
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      margin-bottom:20px;
+      flex-wrap:wrap;
+    }
 
-/* CTA Button */
-.cta {
-  background: linear-gradient(90deg, var(--gold), #f7d77a);
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 15px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  transition: 0.25s ease;
-}
+    .btn{
+      display:inline-block;
+      padding:12px 26px;
+      border-radius:var(--radius);
+      text-decoration:none;
+      font-weight:600;
+      transition:transform .16s ease, box-shadow .16s ease;
+      outline: none;
+    }
 
-.cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
+    .btn:focus-visible{
+      box-shadow:0 0 0 4px rgba(0,123,255,0.18);
+      transform:translateY(-1px);
+    }
 
-    /* PROGRAMS SECTION */
-.programs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-    padding: 10px;
-}
+    .btn-primary{
+      background-color:var(--accent);
+      color:#fff;
+      border:1px solid transparent;
+    }
 
-/* Each Program Card */
-.program {
-    background: #ffffff10;
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid #ffffff15;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-}
+    .btn-primary:hover,
+    .btn-primary:focus{ background-color:var(--accent-dark); text-decoration:none; }
 
-/* Hover Effect */
-.program:hover {
-    transform: translateY(-4px);
-    border-color: #0aa8e6;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
+    .btn-secondary{
+      background:transparent;
+      color:var(--accent);
+      border:2px solid var(--accent);
+    }
 
-/* Title Styling */
-.program h4 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-}
+    .btn-secondary:hover,
+    .btn-secondary:focus{ background:var(--accent); color:#fff; }
 
-/* Description Text */
-.program p,
-.tiny {
-    font-size: 14px;
-    color: #c7d0dc;
-    line-height: 1.5;
-}
+    .badge-row{
+      list-style:none;
+      display:flex;
+      gap:22px;
+      padding:0;
+      margin:12px 0 0;
+      font-weight:700;
+      color:var(--muted);
+      flex-wrap:wrap;
+    }
 
-    /* Two-column sections */
-    section{margin-top:36px}
-    .grid-2{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+    .hero-image{
+      flex:1 1 420px;
+      text-align:center;
+      min-width:220px;
+    }
 
-    /* Blog list */
-    .blog-list{display:grid;gap:12px}
-    .post{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .hero-image img{
+      max-width:100%;
+      height:auto;
+      border-radius:10px;
+      display:inline-block;
+      box-shadow:0 8px 30px rgba(0,0,0,0.45);
+    }
 
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    form{display:grid;gap:10px}
-    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)}
-    .small{font-size:13px;color:var(--muted)}
+    /* small credit under image */
+    .img-credit{
+      display:block;
+      margin-top:8px;
+      font-size:0.85rem;
+      color:rgba(255,255,255,0.72);
+      text-decoration:none;
+    }
 
-    footer{margin-top:48px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
-
-    /* Floating WhatsApp */
-    .whatsapp{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.4);z-index:60}
-
-    /* Responsive */
     @media (max-width:900px){
-      .hero,.grid-2{grid-template-columns:1fr}
-      .hero-left h1{font-size:22px}
-      .video-card iframe, .video-card video{height:200px}
+      .container{ flex-direction:column-reverse; text-align:center; }
+      .hero-text h1{ font-size:clamp(1.5rem, 6vw, 2.25rem); }
+      .badge-row{ justify-content:center; gap:12px; }
+      header .site-wrap{ padding:12px 16px }
     }
-  </style></head>
-<body><header>
-  <div class="brand">
-    <div class="logo">G</div>
-    <div>
-      <div style="font-weight:700">GlobalHireAssist3</div>
-      <div style="font-size:12px;color:var(--muted)">Your Trusted Visa Partner</div>
+
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition:none; transform:none; }
+    }
+
+    /* Small main content placeholder to make the page feel complete */
+    main{ padding:40px 20px; max-width:var(--container-max); margin:0 auto; }
+    footer{ padding:28px 20px; color:#6b7280; font-size:0.95rem; text-align:center; border-top:1px solid #eef2f6; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-wrap">
+      <a class="brand" href="/">GlobalHireAssist</a>
+      <nav aria-label="Primary">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/contact" class="btn-cta">Contact</a>
+      </nav>
     </div>
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#programs">Programs</a>
-    <a href="#blog">Blog</a>
-    <a href="#about">About</a>
-    <a href="#contact" class="cta">Contact</a>
-  </nav>
-</header><main class="container" id="home">
-  <section class="hero">
-    <div class="hero-left">
-      <div class="tag">Mesa, Arizona • Visa Consultancy & Recruitment</div>
-      <h1>GlobalHireAssist3 — Your Trusted Visa Partner</h1>
-      <p class="lead">We connect job seekers with overseas employers and provide end-to-end visa processing support — from application to arrival. Fast, secure, and professional guidance for H‑2A/H‑2B, tourist, visit and study visas.</p><div class="btn-row">
-    <button class="btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply Now</button>
-    <button class="btn ghost" onclick="document.getElementById('programs').scrollIntoView({behavior:'smooth'})">See Programs</button>
-  </div>
+  </header>
 
-  <div class="programs" id="programs">
-    <div class="program"><h4>Work Visa</h4><div class="tiny">H‑2A · H‑2B — Seasonal & temporary employment</div></div>
-    <div class="program"><h4>Tourist Visa</h4><div class="tiny">Short-term travel and tourism support</div></div>
-    <div class="program"><h4>Visit Visa</h4><div class="tiny">Family & visitor entry support</div></div>
-    <div class="program"><h4>Study Visa</h4><div class="tiny">Student visa guidance and placements</div></div>
-  </div>
+  <!-- HERO SECTION -->
+  <section class="hero" aria-label="Hero — Global visa and employment services">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Your Trusted Partner for Global Visa & Employment Opportunities</h1>
+        <p>We simplify your journey abroad with expert visa guidance, secure processing, and professional support from start to finish.</p>
 
-</div>
+        <div class="hero-buttons" role="group" aria-label="Primary call to actions">
+          <a href="/apply" class="btn btn-primary" aria-label="Start your application">Start Your Application</a>
+          <a href="/contact" class="btn btn-secondary" aria-label="Request a free consultation">Free Consultation</a>
+        </div>
 
-<aside>
-  <div class="video-card">
-    <!-- Replace the src with your own YouTube or MP4 video. This is a placeholder embed. -->
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Intro video" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div style="margin-top:12px;display:flex;gap:8px">
-    <div style="flex:1;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Why choose us<br><strong>Trusted process</strong></div>
-    <div style="flex:1;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">Fast turnaround<br><strong>Transparent fees</strong></div>
-  </div>
-</aside>
-
-  </section>  <!-- About -->  <section id="about">
-    <div class="grid-2">
-      <div>
-        <h2>About GlobalHireAssist3</h2>
-        <p class="small">Based in Mesa, Arizona, USA, GlobalHireAssist3 helps applicants and employers navigate the complex visa process. Our mission is to make international hiring and travel simple, safe, and successful.</p><h3 style="margin-top:12px">Mission</h3>
-    <p class="small">To provide trustworthy visa consultancy and recruitment services with clear communications and strong employer partnerships.</p>
-
-    <h3 style="margin-top:12px">Where we work</h3>
-    <p class="small">We operate across the United States and partner with employers worldwide. Primary office: Mesa, Arizona, USA.</p>
-  </div>
-
-  <div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
-    <h4>Employer Partnership</h4>
-    <p class="small">U.S. employers can register to post job openings, screen applicants, and use our admin dashboard for tracking.</p>
-    <a class="btn" href="#contact">Employer Sign Up</a>
-  </div>
-</div>
-
-  </section>  <!-- Applicant form with cognito iframe -->  <section id="apply">
-    <h2>Apply Now</h2>
-    <p class="small">Complete the application below. You can pay MRV and service fees after submitting the form.</p><div style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
-  <!-- Cognito Forms embed provided by user -->
-  <iframe src="https://www.cognitoforms.com/f/rbu767tss0yn-qaiUTtB1A/8" allow="payment" style="border:0;width:100%;" height="1051"></iframe>
-  <script src="https://www.cognitoforms.com/f/iframe.js"></script>
-</div>
-
-<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-  <button class="btn" onclick="startStripeCheckout('applicant')">Pay with Card (Stripe)</button>
-  <button class="btn ghost" onclick="startPayPal()">Pay with PayPal</button>
-  <button class="btn ghost" onclick="subscribePremium()">Premium Membership $25/month</button>
-</div>
-
-  </section>  <!-- Blog -->  <section id="blog">
-    <h2>Blog & Updates</h2>
-    <div class="blog-list" id="posts">
-      <!-- JS will populate blog posts. Use the admin area below to add posts. -->
-    </div><div style="margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
-  <h4>Newsletter</h4>
-  <p class="small">Subscribe for visa updates and tips.</p>
-  <div style="display:flex;gap:8px;max-width:420px">
-    <input id="newsletter_email" placeholder="you@example.com" />
-    <button class="btn" onclick="subscribeNewsletter()">Subscribe</button>
-  </div>
-</div>
-
-  </section>  <!-- Contact -->  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-grid">
-      <div>
-        <form id="contactForm" onsubmit="event.preventDefault();submitContact();">
-          <input id="c_name" placeholder="Full name" required />
-          <input id="c_email" placeholder="Email" required />
-          <input id="c_phone" placeholder="Phone" />
-          <textarea id="c_message" placeholder="Message" rows="5"></textarea>
-          <div style="display:flex;gap:8px;align-items:center">
-            <button class="btn" type="submit">Send Message</button>
-            <a class="btn ghost" href="mailto:globalhireassist@gmail.com">Email Us</a>
-          </div>
-        </form><p class="small" style="margin-top:12px">WhatsApp: <a href="https://wa.me/14472763403" target="_blank">+1 447-276-3403</a></p>
-  </div>
-
-  <aside style="background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
-    <h4>Office</h4>
-    <p class="small">Mesa, Arizona, USA</p>
-    <h4 style="margin-top:8px">Admin Dashboard</h4>
-    <p class="small">Airtable link for tracking applicants, payments and updates.</p>
-    <a class="small" href="https://airtable.com/appCHCHnWhDnRQjzB/pbdFw8J9TKEun9Nsq" target="_blank">Open Airtable Dashboard</a>
-  </aside>
-</div>
-
-  </section>  <!-- Simple admin area (client-side) for posts & job listings (note: not secure; replace with server-side in production) -->  <section id="admin" style="margin-top:28px">
-    <h2>Admin (Local demo)</h2>
-    <p class="small">This is a lightweight client-side admin for quick edits. For production, use a real backend + Airtable or CMS.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <input id="admin_key" placeholder="Admin passcode (demo)" style="min-width:200px" />
-      <button class="btn" onclick="openAdmin()">Open Admin</button>
-    </div>
-    <div id="admin_area" style="display:none;margin-top:12px;background:rgba(255,255,255,0.02);padding:12px;border-radius:12px">
-      <h4>Add Blog Post</h4>
-      <input id="post_title" placeholder="Title" />
-      <textarea id="post_body" placeholder="Short summary" rows="3"></textarea>
-      <button class="btn" onclick="addPost()">Save Post</button><h4 style="margin-top:12px">Job Listings</h4>
-  <input id="job_title" placeholder="Job title" />
-  <input id="job_location" placeholder="Location" />
-  <textarea id="job_desc" placeholder="Short description" rows="2"></textarea>
-  <button class="btn" onclick="addJob()">Save Job</button>
-
-  <p class="small" style="margin-top:8px">Saved data persists to your browser localStorage (demo only).</p>
-</div>
-
-  </section>  <footer>
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <strong>GlobalHireAssist3</strong>
-        <div class="small">Your Trusted Visa Partner • Mesa, Arizona</div>
+        <ul class="badge-row" aria-hidden="false">
+          <li>✔ Fast Processing</li>
+          <li>✔ Transparent Fees</li>
+          <li>✔ Trusted Global Network</li>
+        </ul>
       </div>
-      <div class="small">© <span id="year"></span> GlobalHireAssist3</div>
+
+      <div class="hero-image" aria-hidden="false">
+        <picture>
+          <!-- WebP for supported browsers -->
+          <source type="image/webp"
+            srcset="
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=400&fm=webp&q=60 400w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&fm=webp&q=60 800w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1200&fm=webp&q=60 1200w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1800&fm=webp&q=60 1800w"
+            sizes="(min-width:900px) 420px, 100vw">
+
+          <!-- Fallback formats -->
+          <source
+            srcset="
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=400&q=60 400w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&q=60 800w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1200&q=60 1200w,
+              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1800&q=60 1800w"
+            sizes="(min-width:900px) 420px, 100vw">
+
+          <img
+            src="https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&q=60"
+            alt="Professionals advising a client on international relocation and travel"
+            loading="lazy"
+            decoding="async">
+        </picture>
+
+        <a class="img-credit" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Photo: Unsplash</a>
+      </div>
     </div>
+  </section>
+
+  <main>
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading">How we help</h2>
+      <p>We provide visa advisory, document collection, employer matching, and end-to-end support so you can move abroad confidently.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> GlobalHireAssist — All rights reserved.
   </footer>
-</main><!-- Floating WhatsApp button --><a class="whatsapp" href="https://wa.me/14472763403" target="_blank" title="Chat on WhatsApp">📱</a>
 
-<!-- Minimal JS: local admin, blog rendering, contact handling, Stripe + PayPal placeholders --><script>
-  // SEO: set year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Load demo posts / jobs from localStorage
-  function renderPosts(){
-    const posts = JSON.parse(localStorage.getItem('gha_posts')||'[]');
-    const el = document.getElementById('posts');
-    el.innerHTML = '';
-    if(posts.length===0){ el.innerHTML = '<div class="post">No posts yet. Use Admin to add blog posts.</div>'; return }
-    posts.slice().reverse().forEach(p=>{
-      const d = document.createElement('div'); d.className='post';
-      d.innerHTML = `<strong>${escapeHtml(p.title)}</strong><div class="small">${escapeHtml(p.body)}</div>`;
-      el.appendChild(d);
-    })
-  }
-  renderPosts();
-
-  function escapeHtml(s){ return (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') }
-
-  // Demo admin - VERY lightweight and insecure. Replace with server-auth in production.
-  function openAdmin(){
-    const key = document.getElementById('admin_key').value.trim();
-    if(key!== 'letmein'){ alert('Wrong demo passcode. (demo passcode is: letmein)'); return }
-    document.getElementById('admin_area').style.display='block';
-  }
-  function addPost(){
-    const title = document.getElementById('post_title').value.trim();
-    const body = document.getElementById('post_body').value.trim();
-    if(!title) return alert('Add title');
-    const posts = JSON.parse(localStorage.getItem('gha_posts')||'[]');
-    posts.push({title,body,created:Date.now()});
-    localStorage.setItem('gha_posts',JSON.stringify(posts));
-    document.getElementById('post_title').value=''; document.getElementById('post_body').value='';
-    renderPosts();
-  }
-  function addJob(){
-    const title = document.getElementById('job_title').value.trim();
-    const loc = document.getElementById('job_location').value.trim();
-    const desc = document.getElementById('job_desc').value.trim();
-    if(!title) return alert('Add job title');
-    const jobs = JSON.parse(localStorage.getItem('gha_jobs')||'[]');
-    jobs.push({title,loc,desc,created:Date.now()});
-    localStorage.setItem('gha_jobs',JSON.stringify(jobs));
-    document.getElementById('job_title').value=''; document.getElementById('job_location').value=''; document.getElementById('job_desc').value='';
-    alert('Saved job to localStorage (demo). For employer-facing listings, integrate with Airtable or CMS.');
-  }
-
-  // Contact form handling (demo)
-  function submitContact(){
-    const name=document.getElementById('c_name').value.trim();
-    const email=document.getElementById('c_email').value.trim();
-    const phone=document.getElementById('c_phone').value.trim();
-    const message=document.getElementById('c_message').value.trim();
-    if(!name||!email) return alert('Please include name and email');
-    // Demo: save message to localStorage and show confirmation. Replace with backend email/SMS automation.
-    const inbox = JSON.parse(localStorage.getItem('gha_inbox')||'[]');
-    inbox.push({name,email,phone,message,when:Date.now()});
-    localStorage.setItem('gha_inbox',JSON.stringify(inbox));
-    alert('Message saved. We will contact you at ' + email + '. (Demo mode: messages saved locally)');
-    document.getElementById('contactForm').reset();
-  }
-
-  // Newsletter (demo)
-  function subscribeNewsletter(){
-    const e=document.getElementById('newsletter_email').value.trim();
-    if(!e) return alert('Enter email');
-    const list = JSON.parse(localStorage.getItem('gha_news')||'[]');
-    list.push({email:e,when:Date.now()});
-    localStorage.setItem('gha_news',JSON.stringify(list));
-    alert('Subscribed (demo). Integrate with Mailchimp/Sendinblue for production.');
-    document.getElementById('newsletter_email').value='';
-  }
-
-  // Stripe Checkout demo starter (frontend only)
-  // NOTE: To accept real payments you MUST create Checkout sessions on a secure server using your Stripe secret key.
-  async function startStripeCheckout(type){
-    // This demo will attempt to call /create-checkout-session; you must implement this server endpoint.
-    try{
-      const res = await fetch('/create-checkout-session',{
-        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:type})
-      });
-      const {id, url} = await res.json();
-      if(url) return window.location.href = url; // redirect to hosted Checkout
-      // fallback if using PaymentIntent/Elements
-      alert('Server did not return a Checkout URL. Implement /create-checkout-session on your server.');
-    }catch(err){
-      console.error(err); alert('Stripe demo needs a backend. See comments in the HTML for implementation notes.');
-    }
-  }
-
-  // PayPal demo: open PayPal page (client integration requires a server for capture in production)
-  function startPayPal(){
-    alert('PayPal demo: integrate PayPal Buttons with a server-side order creation for production.');
-  }
-
-  // Premium subscription demo
-  function subscribePremium(){
-    alert('To subscribe customers securely, create a Stripe Checkout session server-side with price_id for $25/month, then redirect users to Stripe Checkout.');
-  }
-
-  // Utility: show saved jobs somewhere (not implemented fully)
-
-</script><!-- Implementation notes (non-executing):
-  * Stripe: The public key you've provided (pk_test_...) is a publishable key. To accept payments securely you MUST implement a server endpoint (/create-checkout-session) that
-    calls Stripe's API with your SECRET key to create a Checkout Session. The front-end should then redirect the user to session.url.
-
-  * PayPal: Include PayPal JS SDK with your client-id and implement order creation + capture server-side.
-
-  * Airtable: To push applicant records automatically to Airtable, create a server-side integration that receives form submissions (webhook) and uses Airtable REST API with your API key.
-
-  * SMS/Email automation: Use services like Twilio (SMS) and SendGrid/Mailgun (email) on your server to send automated notifications when application steps are completed.
-
-  * Cognito Forms: Your embedded iframe is included. Configure Cognito to send webhook notifications to your server or Zapier to forward submissions to Airtable/Stripe/etc.
-
-  * Admin & CMS: This demo uses browser localStorage. For a real site use Airtable, Firebase, or a lightweight CMS (Netlify CMS, Strapi) where you can safely authenticate.
-
-  * Deployment: To publish on GitHub Pages, push this HTML as index.html to a repository's main branch, then enable GitHub Pages. For SSL and custom domain, GitHub Pages provides HTTPS automatically.
---></body>
+  <script>
+    // small runtime bits: set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
