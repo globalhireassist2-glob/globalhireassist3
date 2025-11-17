@@ -1,261 +1,81 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GlobalHireAssist — Visa & Employment Services</title>
-  <meta name="description" content="Trusted partner for global visa and employment opportunities & Employment Services">
-  <meta property="og:description" content="Trusted partner for global visa and employment opportunities. Expert guidance, secure processing, and professional support from start to finish.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#001f3f">
+<!-- HERO SECTION -->
+<section class="hero" aria-label="Hero — Global visa and employment services">
+  <div class="container">
+    <!-- HERO TEXT -->
+    <div class="hero-text">
+      <h1>Your Trusted Partner for Global Visa & Employment Opportunities</h1>
+      <p>We simplify your journey abroad with expert visa guidance, secure processing, and professional support from start to finish.</p>
 
-  <style>
-    :root{
-      --bg-1:#001f3f;
-      --bg-2:#00112a;
-      --accent:#007BFF;
-      --accent-dark:#0056b3;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,0.88);
-      --radius:8px;
-      --container-max:1200px;
-      --gap:40px;
-      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    html,body{height:100%;margin:0}
-    body{
-      font-family:var(--font-sans);
-      background:#fff;
-      color:#111;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
-
-    /* Simple header */
-    header{
-      background:#ffffff;
-      border-bottom:1px solid #eef2f6;
-      position:sticky;
-      top:0;
-      z-index:40;
-    }
-    .site-wrap{
-      max-width:var(--container-max);
-      margin:0 auto;
-      padding:18px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-    .brand{ font-weight:700; color:#0b2b4a; text-decoration:none; font-size:1.05rem }
-    nav a{ color:#0b2b4a; text-decoration:none; margin-left:18px; font-weight:600; }
-    nav a.btn-cta{ background:var(--accent); color:#fff; padding:8px 14px; border-radius:8px; }
-
-    /* HERO SECTION */
-    .hero{
-      background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
-      color:var(--text);
-      padding:72px 20px;
-    }
-
-    .container{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      max-width:var(--container-max);
-      margin:0 auto;
-      gap:var(--gap);
-    }
-
-    .hero-text{
-      flex:1 1 520px;
-      min-width:260px;
-    }
-
-    .hero-text h1{
-      font-size:clamp(1.75rem, 4vw, 3rem);
-      margin:0 0 18px;
-      line-height:1.12;
-      color:var(--text);
-    }
-
-    .hero-text p{
-      font-size:clamp(1rem, 2.2vw, 1.125rem);
-      margin:0 0 22px;
-      color:var(--muted);
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:14px;
-      margin-bottom:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 26px;
-      border-radius:var(--radius);
-      text-decoration:none;
-      font-weight:600;
-      transition:transform .16s ease, box-shadow .16s ease;
-      outline: none;
-    }
-
-    .btn:focus-visible{
-      box-shadow:0 0 0 4px rgba(0,123,255,0.18);
-      transform:translateY(-1px);
-    }
-
-    .btn-primary{
-      background-color:var(--accent);
-      color:#fff;
-      border:1px solid transparent;
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus{ background-color:var(--accent-dark); text-decoration:none; }
-
-    .btn-secondary{
-      background:transparent;
-      color:var(--accent);
-      border:2px solid var(--accent);
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus{ background:var(--accent); color:#fff; }
-
-    .badge-row{
-      list-style:none;
-      display:flex;
-      gap:22px;
-      padding:0;
-      margin:12px 0 0;
-      font-weight:700;
-      color:var(--muted);
-      flex-wrap:wrap;
-    }
-
-    .hero-image{
-      flex:1 1 420px;
-      text-align:center;
-      min-width:220px;
-    }
-
-    .hero-image img{
-      max-width:100%;
-      height:auto;
-      border-radius:10px;
-      display:inline-block;
-      box-shadow:0 8px 30px rgba(0,0,0,0.45);
-    }
-
-    /* small credit under image */
-    .img-credit{
-      display:block;
-      margin-top:8px;
-      font-size:0.85rem;
-      color:rgba(255,255,255,0.72);
-      text-decoration:none;
-    }
-
-    @media (max-width:900px){
-      .container{ flex-direction:column-reverse; text-align:center; }
-      .hero-text h1{ font-size:clamp(1.5rem, 6vw, 2.25rem); }
-      .badge-row{ justify-content:center; gap:12px; }
-      header .site-wrap{ padding:12px 16px }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .btn{ transition:none; transform:none; }
-    }
-
-    /* Small main content placeholder to make the page feel complete */
-    main{ padding:40px 20px; max-width:var(--container-max); margin:0 auto; }
-    footer{ padding:28px 20px; color:#6b7280; font-size:0.95rem; text-align:center; border-top:1px solid #eef2f6; }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="site-wrap">
-      <a class="brand" href="/">GlobalHireAssist</a>
-      <nav aria-label="Primary">
-        <a href="/services">Services</a>
-        <a href="/about">About</a>
-        <a href="/contact" class="btn-cta">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero" aria-label="Hero — Global visa and employment services">
-    <div class="container">
-      <div class="hero-text">
-        <h1>Your Trusted Partner for Global Visa & Employment Opportunities</h1>
-        <p>We simplify your journey abroad with expert visa guidance, secure processing, and professional support from start to finish.</p>
-
-        <div class="hero-buttons" role="group" aria-label="Primary call to actions">
-          <a href="/apply" class="btn btn-primary" aria-label="Start your application">Start Your Application</a>
-          <a href="/contact" class="btn btn-secondary" aria-label="Request a free consultation">Free Consultation</a>
-        </div>
-
-        <ul class="badge-row" aria-hidden="false">
-          <li>✔ Fast Processing</li>
-          <li>✔ Transparent Fees</li>
-          <li>✔ Trusted Global Network</li>
-        </ul>
+      <div class="hero-buttons" role="group" aria-label="Primary call to actions">
+        <a href="/apply" class="btn btn-primary" aria-label="Start your application">Start Your Application</a>
+        <a href="/contact" class="btn btn-secondary" aria-label="Request a free consultation">Free Consultation</a>
       </div>
 
-      <div class="hero-image" aria-hidden="false">
-        <picture>
-          <!-- WebP for supported browsers -->
-          <source type="image/webp"
-            srcset="
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=400&fm=webp&q=60 400w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&fm=webp&q=60 800w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1200&fm=webp&q=60 1200w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1800&fm=webp&q=60 1800w"
-            sizes="(min-width:900px) 420px, 100vw">
+      <ul class="badge-row" aria-hidden="false">
+        <li>✔ Fast Processing</li>
+        <li>✔ Transparent Fees</li>
+        <li>✔ Trusted Global Network</li>
+      </ul>
+    </div>
 
-          <!-- Fallback formats -->
-          <source
-            srcset="
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=400&q=60 400w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&q=60 800w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1200&q=60 1200w,
-              https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=1800&q=60 1800w"
-            sizes="(min-width:900px) 420px, 100vw">
-
-          <img
-            src="https://images.unsplash.com/photo-1542223616-1d7d9d2e9f3a?w=800&q=60"
-            alt="Professionals advising a client on international relocation and travel"
-            loading="lazy"
-            decoding="async">
+    <!-- HERO IMAGE CAROUSEL -->
+    <div class="hero-image" aria-hidden="false">
+      <div class="hero-carousel">
+        <!-- Slide 1 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625234872046-87c9a987b0c7?fm=webp&w=800&q=60" sizes="(min-width:900px) 420px, 100vw">
+          <img src="https://images.unsplash.com/photo-1625234872046-87c9a987b0c7?w=800&q=60" alt="Person holding a passport over a map" loading="lazy" decoding="async">
         </picture>
-
-        <a class="img-credit" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Photo: Unsplash</a>
+        <!-- Slide 2 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1591801231383-b5f4b3f3f5e3?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1591801231383-b5f4b3f3f5e3?w=800&q=60" alt="Black and silver Nikon DSLR camera on red book" loading="lazy" decoding="async">
+        </picture>
+        <!-- Slide 3 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1605902711622-cfb43c443b9d?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443b9d?w=800&q=60" alt="White and blue identification card" loading="lazy" decoding="async">
+        </picture>
+        <!-- Slide 4 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1609051186442-0QcSnCM0aMc?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1609051186442-0QcSnCM0aMc?w=800&q=60" alt="Person holding passports" loading="lazy" decoding="async">
+        </picture>
+        <!-- Slide 5 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625298695067-CIuakYIjadc?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1625298695067-CIuakYIjadc?w=800&q=60" alt="Person holding blue and brown map" loading="lazy" decoding="async">
+        </picture>
+        <!-- Slide 6 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625271764477-jv15x2Gs5F8?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1625271764477-jv15x2Gs5F8?w=800&q=60" alt="Person riding airplane" loading="lazy" decoding="async">
+        </picture>
+        <!-- Slide 7 -->
+        <picture class="carousel-slide">
+          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625283098794-M0AWNxnLaMw?fm=webp&w=800&q=60">
+          <img src="https://images.unsplash.com/photo-1625283098794-M0AWNxnLaMw?w=800&q=60" alt="Airplane on sky during golden hour" loading="lazy" decoding="async">
+        </picture>
       </div>
+
+      <a class="img-credit" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Photos: Unsplash</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <main>
-    <section aria-labelledby="about-heading">
-      <h2 id="about-heading">How we help</h2>
-      <p>We provide visa advisory, document collection, employer matching, and end-to-end support so you can move abroad confidently.</p>
-    </section>
-  </main>
+<!-- JS Carousel: Add at the bottom of your HTML, before </body> -->
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  let current = 0;
 
-  <footer>
-    © <span id="year"></span> GlobalHireAssist — All rights reserved.
-  </footer>
+  function showSlide(index){
+    slides.forEach((slide,i)=> slide.style.display = i === index ? 'block' : 'none');
+  }
 
-  <script>
-    // small runtime bits: set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  showSlide(current);
+
+  setInterval(()=>{
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 5000); // rotate every 5 seconds
+</script>
