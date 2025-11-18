@@ -1,81 +1,342 @@
-<!-- HERO SECTION -->
-<section class="hero" aria-label="Hero — Global visa and employment services">
-  <div class="container">
-    <!-- HERO TEXT -->
-    <div class="hero-text">
-      <h1>Your Trusted Partner for Global Visa & Employment Opportunities</h1>
-      <p>We simplify your journey abroad with expert visa guidance, secure processing, and professional support from start to finish.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Hire Assist</title>
 
-      <div class="hero-buttons" role="group" aria-label="Primary call to actions">
-        <a href="/apply" class="btn btn-primary" aria-label="Start your application">Start Your Application</a>
-        <a href="/contact" class="btn btn-secondary" aria-label="Request a free consultation">Free Consultation</a>
+<style>
+/* GLOBAL STYLES */
+body {
+  margin:0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+:root {
+  --bg:#ffffff;
+  --text:#111;
+  --primary:#3b82f6;
+  --card:#f3f4f6;
+}
+
+.dark {
+  --bg:#0f0f0f;
+  --text:#f8f8f8;
+  --card:#1a1a1a;
+}
+
+/* HEADER */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:999;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav a {
+  margin:0 15px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+
+nav a:hover { color:var(--primary); }
+
+/* HERO */
+.hero {
+  padding:60px 40px;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size:50px;
+  font-weight:700;
+}
+
+.hero p { font-size:20px; }
+
+/* BUTTON */
+.btn {
+  padding:12px 26px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:10px;
+  transition:0.3s;
+}
+.btn:hover { opacity:0.8; }
+
+/* IMAGE SLIDER */
+.slider {
+  max-width:90%;
+  height:380px;
+  margin:40px auto;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+}
+
+.slides img {
+  width:100%;
+  height:380px;
+  object-fit:cover;
+}
+
+.slides {
+  display:flex;
+  width:300%;
+  animation:slide 12s infinite linear;
+}
+
+@keyframes slide {
+  0% { transform:translateX(0); }
+  33% { transform:translateX(-100%); }
+  66% { transform:translateX(-200%); }
+  100% { transform:translateX(0); }
+}
+
+/* SERVICES DROPDOWN */
+.dropdown-container {
+  margin:40px auto;
+  max-width:900px;
+}
+
+.dropdown {
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  margin:10px 0;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.dropdown:hover { background:#dfe6ee; }
+
+.dropdown-content {
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s ease;
+  padding:0 10px;
+}
+
+/* ABOUT */
+.section {
+  padding:60px 40px;
+  max-width:900px;
+  margin:auto;
+}
+
+h2 { font-size:35px; margin-bottom:20px; }
+
+/* BLOG CMS */
+.blog-card {
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  margin:10px 0;
+}
+
+.blog-input {
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+}
+
+/* CONTACT FORM */
+form input, form textarea, form select {
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+  border:1px solid #ddd;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+  width:55px;
+  height:55px;
+  background:#25d366;
+  position:fixed;
+  bottom:25px;
+  right:20px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:28px;
+  text-decoration:none;
+  z-index:99999;
+}
+
+/* DARK MODE TOGGLE */
+.toggle {
+  padding:8px 20px;
+  background:var(--card);
+  border-radius:20px;
+  cursor:pointer;
+  border:1px solid #ccc;
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🌍 Global Hire Assist</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Apply</a>
+  </nav>
+  <div class="toggle" onclick="toggleMode()">🌙</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Professional Visa Support You Can Trust</h1>
+  <p>Fast, ethical, transparent guidance for USA, Canada & global opportunities.</p>
+  <a href="#contact" class="btn">Start Application</a>
+</section>
+
+<!-- IMAGE SLIDER -->
+<div class="slider">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1581091012184-7c2a43c01ddb" alt="">
+    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p>
+    Global Hire Assist is a trusted visa advisory and recruitment support agency helping individuals secure opportunities abroad with integrity, transparency and professionalism.
+    We offer fast processing, verified guidance and step-by-step support from consultation to visa approval.
+  </p>
+</section>
+
+<!-- SERVICES DROPDOWN -->
+<section class="section" id="services">
+  <h2>Our Services</h2>
+
+  <div class="dropdown-container">
+    
+    <div class="dropdown" onclick="toggleDropdown(1)">
+      <h3>🇺🇸 USA Visa Assistance</h3>
+      <div class="dropdown-content" id="drop1">
+        <p>DS-160 Preparation<br>Embassy Appointment<br>Interview Coaching<br>Document Verification</p>
       </div>
-
-      <ul class="badge-row" aria-hidden="false">
-        <li>✔ Fast Processing</li>
-        <li>✔ Transparent Fees</li>
-        <li>✔ Trusted Global Network</li>
-      </ul>
     </div>
 
-    <!-- HERO IMAGE CAROUSEL -->
-    <div class="hero-image" aria-hidden="false">
-      <div class="hero-carousel">
-        <!-- Slide 1 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625234872046-87c9a987b0c7?fm=webp&w=800&q=60" sizes="(min-width:900px) 420px, 100vw">
-          <img src="https://images.unsplash.com/photo-1625234872046-87c9a987b0c7?w=800&q=60" alt="Person holding a passport over a map" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 2 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1591801231383-b5f4b3f3f5e3?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1591801231383-b5f4b3f3f5e3?w=800&q=60" alt="Black and silver Nikon DSLR camera on red book" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 3 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1605902711622-cfb43c443b9d?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443b9d?w=800&q=60" alt="White and blue identification card" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 4 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1609051186442-0QcSnCM0aMc?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1609051186442-0QcSnCM0aMc?w=800&q=60" alt="Person holding passports" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 5 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625298695067-CIuakYIjadc?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1625298695067-CIuakYIjadc?w=800&q=60" alt="Person holding blue and brown map" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 6 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625271764477-jv15x2Gs5F8?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1625271764477-jv15x2Gs5F8?w=800&q=60" alt="Person riding airplane" loading="lazy" decoding="async">
-        </picture>
-        <!-- Slide 7 -->
-        <picture class="carousel-slide">
-          <source type="image/webp" srcset="https://images.unsplash.com/photo-1625283098794-M0AWNxnLaMw?fm=webp&w=800&q=60">
-          <img src="https://images.unsplash.com/photo-1625283098794-M0AWNxnLaMw?w=800&q=60" alt="Airplane on sky during golden hour" loading="lazy" decoding="async">
-        </picture>
+    <div class="dropdown" onclick="toggleDropdown(2)">
+      <h3>🇨🇦 Canada Work & Immigration</h3>
+      <div class="dropdown-content" id="drop2">
+        <p>LMIA Support<br>Work Permits<br>Employer Match<br>Document Review</p>
       </div>
-
-      <a class="img-credit" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Photos: Unsplash</a>
     </div>
+
+    <div class="dropdown" onclick="toggleDropdown(3)">
+      <h3>👔 Recruitment & Placement</h3>
+      <div class="dropdown-content" id="drop3">
+        <p>Hospitality Jobs<br>Caregiver Roles<br>Skilled & Semi-Skilled<br>International Employers</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- JS Carousel: Add at the bottom of your HTML, before </body> -->
+<!-- BLOG CMS -->
+<section class="section" id="blog">
+  <h2>Blog Posts</h2>
+
+  <!-- ADD BLOG -->
+  <input id="blogTitle" class="blog-input" placeholder="Blog Title">
+  <textarea id="blogContent" class="blog-input" placeholder="Blog Content"></textarea>
+  <button class="btn" onclick="addBlog()">Publish</button>
+
+  <div id="blogList"></div>
+</section>
+
+<!-- CONTACT / APPLY PAGE -->
+<section class="section" id="contact">
+  <h2>Apply or Contact Us</h2>
+
+  <form>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Phone Number">
+    <input type="text" placeholder="Country">
+    <select>
+      <option>USA Visa</option>
+      <option>Canada Work Visa</option>
+      <option>Recruitment Support</option>
+    </select>
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Submit Application</button>
+  </form>
+
+  <p>Email: support@globalhireassist.com</p>
+  <p>WhatsApp: +14472763403</p>
+</section>
+
+<footer>
+  © 2025 Global Hire Assist — All Rights Reserved
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/14472763403" class="whatsapp">✆</a>
+
 <script>
-  const slides = document.querySelectorAll('.carousel-slide');
-  let current = 0;
+/* DARK MODE */
+function toggleMode() {
+  document.body.classList.toggle("dark");
+}
 
-  function showSlide(index){
-    slides.forEach((slide,i)=> slide.style.display = i === index ? 'block' : 'none');
-  }
+/* DROPDOWN ANIMATION */
+function toggleDropdown(id) {
+  let content = document.getElementById("drop" + id);
+  content.style.maxHeight = 
+    content.style.maxHeight ? null : content.scrollHeight + "px";
+}
 
-  showSlide(current);
+/* BLOG CMS */
+function addBlog() {
+  let title = document.getElementById("blogTitle").value;
+  let content = document.getElementById("blogContent").value;
 
-  setInterval(()=>{
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }, 5000); // rotate every 5 seconds
+  if (!title || !content) return;
+
+  let blogList = document.getElementById("blogList");
+  let card = document.createElement("div");
+  card.className = "blog-card";
+  card.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+  blogList.prepend(card);
+
+  document.getElementById("blogTitle").value = "";
+  document.getElementById("blogContent").value = "";
+}
 </script>
+
+</body>
+</html>
