@@ -409,16 +409,35 @@ document.getElementById("visaForm").addEventListener("submit", function() {
     if(!active) el.classList.add('active');
   }
 
-  // Contact form (mailto fallback)
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const f = new FormData(this);
-    const subject = encodeURIComponent('Application from ' + (f.get('fullname')||''));
-    const body = encodeURIComponent(
-      'Name: '+(f.get('fullname')||'')+'\nEmail: '+(f.get('email')||'')+'\nPhone: '+(f.get('phone')||'')+'\nCountry: '+(f.get('country')||'')+'\nVisaType: '+(f.get('visaType')||'')+'\n\nMessage:\n'+(f.get('message')||'')
-    );
-    window.location.href = 'mailto:support@globalhireassist.com?subject='+subject+'&body='+body;
+  <form id="contactForm">
+  <input type="text" id="name" placeholder="Your name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const payload = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const res = await fetch("/.netlify/functions/send-email", {
+    method: "POST",
+    body: JSON.stringify(payload)
   });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+  } else {
+    alert("Failed to send. Try again.");
+  }
+});
+</script>
 
   // Blog publish demo (local only)
   function publishPost(){
