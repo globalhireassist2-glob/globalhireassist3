@@ -7,8 +7,36 @@
 <script src="https://cdn.statsig.com/js/statsig-js-1.14.0.min.js"></script>
 <script>
   statsig.initialize("client-tzScziLLQSr8Ft2Q1xpTczpf3rJxk780XFlmYckR5a4", { 
-    userID: "<form id="visaForm">" 
+    userID: "<form id="visaForm">"
+<form id="contactForm">
+  <input type="text" id="name" placeholder="Your name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
 <script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const payload = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const res = await fetch("/.netlify/functions/send-email", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully!");
+  } else {
+    alert("Failed to send. Try again.");
+  }
+});
+</script> 
 document.getElementById("visaForm").addEventListener("submit", function() {
     statsig.logEvent("form_submitted");
 });
