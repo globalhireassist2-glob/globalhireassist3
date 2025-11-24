@@ -2,7 +2,14 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
+media_folder: "overseas-jobs-safe.webp
+job-verification.webp
+avoid-job-scams.webp
+documents-checklist.webp
+visa-process.webp
+medical-checkup.webp
+visa-consultation.webp
+success-abroad.webp"
 public_folder: "/images/uploads"
 
 collections:
