@@ -6,7 +6,7 @@
 <title>Global Hire Assist — Premium Visa & Recruitment</title>
 <script src="https://cdn.statsig.com/js/statsig-js-1.14.0.min.js"></script>
 <script>
-  statsig.initialize("client-tzScziLLQSr8Ft2Q1xpTczpf3rJxk780XFlmYckR5a4", { 
+  { 
     userID: "<form id="visaForm">"
 <form id="contactForm">
   <input type="text" id="name" placeholder="Your name" required>
@@ -16,8 +16,6 @@
 </form>
 
 <script>
-document.getElementById("contactForm").addEventListener("submit", async function(e){
-  e.preventDefault();
 
   const payload = {
     name: document.getElementById("name").value,
