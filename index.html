@@ -1,207 +1,49 @@
+!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Global Hire Assist — Premium Visa & Recruitment</title>
-<script src="https://cdn.statsig.com/js/statsig-js-1.14.0.min.js"></script>
-<script>
-  { 
-    userID: "<form id="visaForm">"
-<form id="contactForm">
-  <input type="text" id="name" placeholder="Your name" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <textarea id="message" placeholder="Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Hire Assist — Premium Visa & Recruitment</title>
+  <meta name="description" content="Global Hire Assist — Trusted visa advisory and recruitment support. Expert guidance, secure processing, and professional support from consultation to approval." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2216%22 font-size=%2216%22>🌍</text></svg>">
 
-<script>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  const payload = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  };
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-  const res = await fetch("/.netlify/functions/send-email", {
-    method: "POST",
-    body: JSON.stringify(payload)
-  });
+  <!-- Lottie web -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  if (res.ok) {
-    alert("Message sent successfully!");
-  } else {
-    alert("Failed to send. Try again.");
-  }
-});
-</script> 
-document.getElementById("visaForm").addEventListener("submit", function() {
-    statsig.logEvent("form_submitted");
-});
-</script>
-<meta name="description" content="Global Hire Assist — Trusted visa advisory and recruitment support. Expert guidance, secure processing, and professional support from consultation to approval." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2216%22 font-size=%2216%22>🌍</text></svg>">
+  <!-- Netlify CMS (admin will load this from /admin) -->
 
-<!-- Google fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<!-- GSAP + ScrollTrigger CDN -->
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-<!-- Lottie web (for animated illustrations) -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-<style>
-  /* Variables (Royal Blue Luxury) */
-  :root{
-    --primary:#0B4FA1;
-    --bg:#00182B;
-    --bg-2:#001427;
-    --accent:#3AB7FF;
-    --gold:#E0B040;
-    --text:#F6F8FA;
-    --muted: rgba(246,248,250,0.78);
-    --radius:14px;
-    --container:1200px;
-    --glass: rgba(255,255,255,0.03);
-    --glass-2: rgba(255,255,255,0.02);
-  }
-  /* Base */
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-2));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--container);margin:0 auto;padding:24px}
-  /* Header */
-  header.primary{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,rgba(0,0,0,0.25), transparent);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--container);margin:0 auto;padding:14px 20px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand svg{height:42px;width:auto}
-  .nav-links{display:flex;gap:16px;align-items:center}
-  .nav-links a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:600}
-  .nav-links a:hover{background:var(--glass);color:var(--accent)}
-  .cta-btn{background:var(--accent);color:#001; padding:10px 14px;border-radius:10px;font-weight:700}
-  /* Hero */
-  .hero{display:flex;gap:28px;align-items:center;justify-content:space-between;padding:64px 20px;flex-wrap:wrap}
-  .hero-left{flex:1 1 520px;min-width:300px}
-  .eyebrow{color:var(--gold);font-weight:700;margin-bottom:10px}
-  .hero h1{font-family:'Playfair Display', serif;font-size:clamp(2rem,4.4vw,3.2rem);margin:8px 0 16px;line-height:1.04}
-  .hero p{color:var(--muted);font-size:1.05rem;max-width:680px}
-  .hero-ctas{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn-primary{background:var(--accent);color:#001;padding:12px 20px;border-radius:10px;font-weight:800}
-  .btn-ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:10px 18px;border-radius:10px;font-weight:700}
-  /* Right: animated illustration */
-  .hero-right{width:460px;max-width:46%;min-width:260px}
-  .glass-card{background:linear-gradient(180deg,var(--glass), var(--glass-2));padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 40px rgba(3,8,22,0.6)}
-  /* Service dropdowns */
-  .services {padding:40px 20px}
-  .services-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-  .service-list{display:flex;flex-direction:column;gap:12px}
-  .service-item{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);cursor:pointer;transition:all .24s}
-  .service-item:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,8,16,0.6)}
-  .service-body{max-height:0;overflow:hidden;transition:max-height .36s ease;padding:0 12px}
-  .service-item.active .service-body{max-height:320px;padding:12px}
-  /* Counters */
-  .counters{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
-  .counter{background:var(--glass);padding:16px;border-radius:12px;min-width:140px;text-align:center}
-  .counter .num{font-size:1.5rem;font-weight:800;color:var(--accent)}
-  /* How it works */
-  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
-  .step-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
-  .step-num{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#001;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px}
-  /* Testimonials */
-  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
-  .test-card{padding:20px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-  /* Blog preview (CMS-ready) */
-  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
-  .post-card{padding:16px;border-radius:12px;background:rgba(255,255,255,0.02)}
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px}
-  .form-card{padding:18px;border-radius:12px;background:rgba(255,255,255,0.02)}
-  input,select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical}
-  .submit{background:var(--accent);color:#001;padding:12px;border-radius:10px;border:none;font-weight:800}
-  /* Footer */
-  footer.site{padding:28px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
-  /* WhatsApp FAB */
-  .wa-fab{position:fixed;right:20px;bottom:20px;background:#25D366;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(2,8,16,0.6);z-index:1200}
-  .wa-fab svg{width:34px;height:34px}
-  /* Responsive */
-  @media (max-width:1000px){
-    .services-grid{grid-template-columns:1fr}
-    .hero-right{max-width:100%;width:100%}
-    .hero{padding:36px 16px}
-    .nav-links{display:none}
-  }
-</style>
+  <style>
+    /* trimmed styles: same as original theme (royal blue) */
+    :root{--primary:#0B4FA1;--bg:#00182B;--bg-2:#001427;--accent:#3AB7FF;--gold:#E0B040;--text:#F6F8FA;--muted: rgba(246,248,250,0.78);--radius:14px;--container:1200px;--glass: rgba(255,255,255,0.03);--glass-2: rgba(255,255,255,0.02);}*{box-sizing:border-box}html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-2));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;}a{color:inherit;text-decoration:none}.wrap{max-width:var(--container);margin:0 auto;padding:24px}header.primary{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,rgba(0,0,0,0.25), transparent);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--container);margin:0 auto;padding:14px 20px}.brand{display:flex;align-items:center;gap:12px}.nav-links{display:flex;gap:16px;align-items:center}.nav-links a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:600}.nav-links a:hover{background:var(--glass);color:var(--accent)}.cta-btn{background:var(--accent);color:#001; padding:10px 14px;border-radius:10px;font-weight:700}.hero{display:flex;gap:28px;align-items:center;justify-content:space-between;padding:64px 20px;flex-wrap:wrap}.hero-left{flex:1 1 520px;min-width:300px}.eyebrow{color:var(--gold);font-weight:700;margin-bottom:10px}.hero h1{font-family:'Playfair Display', serif;font-size:clamp(2rem,4.4vw,3.2rem);margin:8px 0 16px;line-height:1.04}.hero p{color:var(--muted);font-size:1.05rem;max-width:680px}.hero-ctas{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}.btn-primary{background:var(--accent);color:#001;padding:12px 20px;border-radius:10px;font-weight:800}.btn-ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:10px 18px;border-radius:10px;font-weight:700}.hero-right{width:460px;max-width:46%;min-width:260px}.glass-card{background:linear-gradient(180deg,var(--glass), var(--glass-2));padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 40px rgba(3,8,22,0.6)}.services {padding:40px 20px}.services-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}.service-list{display:flex;flex-direction:column;gap:12px}.service-item{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);cursor:pointer;transition:all .24s}.service-item:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,8,16,0.6)}.service-body{max-height:0;overflow:hidden;transition:max-height .36s ease;padding:0 12px}.service-item.active .service-body{max-height:320px;padding:12px}.counters{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}.counter{background:var(--glass);padding:16px;border-radius:12px;min-width:140px;text-align:center}.counter .num{font-size:1.5rem;font-weight:800;color:var(--accent)}.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}.step-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}.step-num{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#001;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px}.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}.test-card{padding:20px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}.post-card{padding:16px;border-radius:12px;background:rgba(255,255,255,0.02)}.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px}.form-card{padding:18px;border-radius:12px;background:rgba(255,255,255,0.02)}input,select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical}.submit{background:var(--accent);color:#001;padding:12px;border-radius:10px;border:none;font-weight:800}footer.site{padding:28px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}.wa-fab{position:fixed;right:20px;bottom:20px;background:#25D366;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(2,8,16,0.6);z-index:1200}@media (max-width:1000px){.services-grid{grid-template-columns:1fr}.hero-right{max-width:100%;width:100%}.hero{padding:36px 16px}.nav-links{display:none}}
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="primary" role="banner">
   <div class="nav-inner wrap">
     <a class="brand" href="#home" aria-label="Global Hire Assist">
-      <!-- Inline SVG logo -->
-<!-- Full logo: Global Hire Assist (icon + wordmark) -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120" role="img" aria-label="Global Hire Assist logo">
-  <defs>
-    <linearGradient id="g-royal" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0B4FA1"/>
-      <stop offset="1" stop-color="#073B7A"/>
-    </linearGradient>
-    <linearGradient id="g-gold" x1="0" x2="1">
-      <stop offset="0" stop-color="#F0C86A"/>
-      <stop offset="1" stop-color="#E0B040"/>
-    </linearGradient>
-    <filter id="f-shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00162a" flood-opacity="0.45"/>
-    </filter>
-  </defs>
-
-  <!-- Shield background (royal gradient) -->
-  <g transform="translate(0,0)">
-    <path d="M90 6 L170 34 v36 c0 34-22 64-48 80 -44 25 -96 25 -140 0 -26-16-48-46-48-80 V34 L90 6 z"
-          fill="url(#g-royal)" filter="url(#f-shadow)"/>
-  </g>
-
-  <!-- Globe inside shield -->
-  <g transform="translate(24,22)" fill="none" stroke="#F6F8FA" stroke-width="1.2">
-    <circle cx="46" cy="40" r="28" stroke-opacity="0.95" />
-    <path d="M18 40c6-14 56-14 68 0" stroke-opacity="0.55"/>
-    <path d="M46 12v56" stroke-opacity="0.55"/>
-  </g>
-
-  <!-- Gold check mark (trust) -->
-  <path d="M176 64 l12 12 28 -35" stroke="url(#g-gold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-
-  <!-- Wordmark: "Global Hire" (Playfair-like) and "Assist" (Inter-like) -->
-  <!-- NOTE: Depending on environment, font fallback will apply. If you convert to paths in an SVG editor you'll keep exact typography. -->
-  <text x="210" y="58" font-family="Playfair Display, Georgia, serif" font-size="36" font-weight="700" fill="#F6F8FA">Global Hire</text>
-  <text x="210" y="90" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#3AB7FF">Assist</text>
-</svg>
-      <svg viewBox="0 0 260 60" width="160" height="36" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-        <path d="M130 4l80 28v18c0 17-11 32-24 39-26 13-56 13-82 0-13-7-24-22-24-39V32L130 4z" fill="#0B4FA1"/>
-        <g transform="translate(110,8)" fill="none" stroke="#F6F8FA" stroke-width="1.2">
-          <circle cx="20" cy="18" r="12" stroke-opacity="0.9"></circle>
-          <path d="M8 18c4-8 28-8 36 0" stroke-opacity="0.6"/>
-          <path d="M20 6v24" stroke-opacity="0.6" />
-        </g>
-        <path d="M150 38l6 6 12-14" stroke="#E0B040" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <text x="22" y="45" font-family="Playfair Display, serif" font-size="18" fill="#F6F8FA" font-weight="700">Global Hire</text>
-        <text x="150" y="45" font-family="Inter, sans-serif" font-size="12" fill="#3AB7FF" font-weight="700">Assist</text>
-      </svg>
+      <!-- Simplified SVG logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="160" height="36" role="img"><path d="M130 4l80 28v18c0 17-11 32-24 39-26 13-56 13-82 0-13-7-24-22-24-39V32L130 4z" fill="#0B4FA1"/></svg>
     </a>
 
     <nav role="navigation" aria-label="Main navigation" class="nav-links">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#works">How it Works</a>
-      <a href="#blog">Blog</a>
+      <a href="/blog/">Blog</a>
       <a href="#contact" class="cta-btn">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <section id="home" class="hero wrap" aria-label="Hero">
   <div class="hero-left">
     <div class="eyebrow">Trusted Visa & Recruitment</div>
@@ -231,66 +73,35 @@ document.getElementById("visaForm").addEventListener("submit", function() {
 
   <div class="hero-right">
     <div class="glass-card" id="hero-illustration" role="img" aria-label="Illustration of consultant and travel">
-      <!-- Lottie placeholder for animated consultant/travel scene -->
       <lottie-player id="lottieHero" src="https://assets1.lottiefiles.com/packages/lf20_9wpyhdzo.json" background="transparent" speed="1" style="width:100%;height:320px" loop autoplay></lottie-player>
     </div>
   </div>
 </section>
 
-<!-- SERVICES (with dropdown animation) -->
 <section id="services" class="services wrap" aria-labelledby="services-title">
   <h2 id="services-title">Professional Visa & Recruitment Services</h2>
   <div class="services-grid" style="display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start">
     <div class="service-list" role="list" aria-label="Service list">
-      <!-- Service 1 -->
-      <div class="service-item" data-id="s1" onclick="toggleService(this)">
-        <strong>USA Visa Support (B1/B2 & Work)</strong>
-        <div class="service-body">
-          <p>DS-160 prep · Embassy appointment · Interview coaching · Document verification</p>
-        </div>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="service-item" data-id="s2" onclick="toggleService(this)">
-        <strong>Canada Work & Immigration Programs</strong>
-        <div class="service-body">
-          <p>LMIA employer connections · Work permit support · Job matching · Document prep</p>
-        </div>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="service-item" data-id="s3" onclick="toggleService(this)">
-        <strong>Global Recruitment Assistance</strong>
-        <div class="service-body">
-          <p>Hospitality, caregiver, skilled roles · Verified employer network</p>
-        </div>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service-item" data-id="s4" onclick="toggleService(this)">
-        <strong>Document Preparation & Review</strong>
-        <div class="service-body">
-          <p>Resumes, invitation letters, proof of funds, passport & form checks</p>
-        </div>
-      </div>
+      <!-- placeholder service items are editable via Netlify CMS -->
+      <div class="service-item" data-id="s1" onclick="toggleService(this)"><strong>USA Visa Support (B1/B2 & Work)</strong><div class="service-body"><p>DS-160 prep · Embassy appointment · Interview coaching · Document verification</p></div></div>
+      <div class="service-item" data-id="s2" onclick="toggleService(this)"><strong>Canada Work & Immigration Programs</strong><div class="service-body"><p>LMIA employer connections · Work permit support · Job matching · Document prep</p></div></div>
+      <div class="service-item" data-id="s3" onclick="toggleService(this)"><strong>Global Recruitment Assistance</strong><div class="service-body"><p>Hospitality, caregiver, skilled roles · Verified employer network</p></div></div>
+      <div class="service-item" data-id="s4" onclick="toggleService(this)"><strong>Document Preparation & Review</strong><div class="service-body"><p>Resumes, invitation letters, proof of funds, passport & form checks</p></div></div>
     </div>
-
     <aside>
       <div class="glass-card">
         <h3 style="margin:0 0 8px">Why choose our services</h3>
         <p style="color:var(--muted)">Fast processing, transparent fees, reliable employer connections and secure document handling.</p>
-        <div style="margin-top:16px">
-          <a class="btn-primary" href="#contact">Get Started</a>
-        </div>
+        <div style="margin-top:16px"><a class="btn-primary" href="#contact">Get Started</a></div>
       </div>
     </aside>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section id="works" class="wrap" aria-labelledby="works-title">
   <h2 id="works-title">Our Simple Application Process</h2>
   <div class="steps-grid">
+    <!-- steps same as original -->
     <div class="step-card step-card-1"><div class="step-num">1</div><strong>Submit Application</strong><p style="color:var(--muted)">Complete our secure application form.</p></div>
     <div class="step-card"><div class="step-num">2</div><strong>Consultation & Eligibility</strong><p style="color:var(--muted)">We review your profile and options.</p></div>
     <div class="step-card"><div class="step-num">3</div><strong>Submit Documents</strong><p style="color:var(--muted)">We prepare & verify your paperwork.</p></div>
@@ -302,7 +113,6 @@ document.getElementById("visaForm").addEventListener("submit", function() {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials" class="wrap">
   <h2>What Our Applicants Say</h2>
   <div class="test-grid">
@@ -312,7 +122,14 @@ document.getElementById("visaForm").addEventListener("submit", function() {
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="blog" class="wrap">
+  <h2>Latest from our Blog</h2>
+  <div id="posts" class="blog-grid">
+    <!-- Posts will be generated from /content/blog/*.md when you build or you can list them statically here -->
+    <!-- CMS users will add markdown files under /content/blog/ and each will appear on /blog/ when deployed -->
+  </div>
+</section>
+
 <section id="contact" class="wrap" aria-labelledby="contact-title">
   <h2 id="contact-title">Apply or Contact Us</h2>
   <div class="contact-grid">
@@ -345,7 +162,6 @@ document.getElementById("visaForm").addEventListener("submit", function() {
   </div>
 </section>
 
-<!-- TERMS -->
 <section id="terms" class="wrap">
   <h2>Terms & Conditions</h2>
   <div class="glass-card">
@@ -353,102 +169,178 @@ document.getElementById("visaForm").addEventListener("submit", function() {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site wrap site" role="contentinfo">
   <div>© <span id="year"></span> Global Hire Assist — All rights reserved.</div>
 </footer>
 
-<!-- WhatsApp FAB -->
 <a class="wa-fab wa-fab" aria-label="Contact Global Hire Assist on WhatsApp" title="Chat on WhatsApp" href="https://wa.me/14472763403" target="_blank" rel="noopener">
   <div class="wa-fab" style="background:#25D366;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.52 3.48A11.9 11.9 0 0 0 12 .75C6.07.75 1.5 5.32 1.5 11.25c0 1.98.52 3.86 1.5 5.53L1.5 23.25l6.68-1.74a11.39 11.39 0 0 0 4.32.84c5.93 0 10.5-4.57 10.5-10.5 0-2.82-1.1-5.42-3.48-7.17z" fill="#fff" opacity="0.06"/><path d="M17.472 14.382c-.297-.148-1.756-.867-2.029-.966-.273-.099-.472-.148-.672.149-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.885-.788-1.482-1.761-1.655-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.173.198-.297.298-.495.099-.198.05-.371-.025-.52-.074-.148-.672-1.62-.92-2.22-.242-.582-.487-.503-.672-.512l-.572-.01c-.198 0-.52.074-.793.37-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.212 3.074.148.198 2.095 3.196 5.075 4.48 2.98 1.283 2.98.855 3.517.803.536-.051 1.756-.716 2.005-1.407.248-.69.248-1.283.173-1.407-.074-.124-.272-.198-.57-.347z" fill="#fff"/></svg>
   </div>
 </a>
 
-<!-- SCRIPTS: GSAP Animations + interaction logic -->
 <script>
   // set year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // GSAP entrance animations
+  // GSAP / Lottie animations
   document.addEventListener('DOMContentLoaded', function(){
     gsap.registerPlugin(ScrollTrigger);
-
-    // hero animation
     gsap.from(".eyebrow", {y: -10, opacity:0, duration:0.6, delay:0.2});
     gsap.from(".hero h1", {y: 10, opacity:0, duration:0.8, delay:0.3, ease:"power3.out"});
-    gsap.from(".hero p", {y: 12, opacity:0, duration:0.8, delay:0.45});
-    gsap.from(".hero-ctas a", {y: 8, opacity:0, stagger:0.08, delay:0.6});
 
-    // counters animation when visible
+    // counters
     const counters = document.querySelectorAll('.num');
     counters.forEach(c=>{
       let target = +c.dataset.target;
-      gsap.fromTo(c, {innerText:0}, {innerText:target, duration:2.2, ease:"power1.in", snap:{innerText:1}, scrollTrigger:{
-        trigger: c, start: "top 80%", once: true
-      }});
+      gsap.fromTo(c, {innerText:0}, {innerText:target, duration:2.2, ease:"power1.in", snap:{innerText:1}, scrollTrigger:{trigger: c, start: "top 80%", once: true}});
     });
 
-    // Lottie small bounce
     gsap.to("#hero-illustration", {y: -6, duration:2, ease:"sine.inOut", yoyo:true, repeat:-1});
-
-    // reveal on scroll
-    gsap.utils.toArray('.step-card, .test-card, .post-card, .service-item').forEach(el=>{
-      gsap.from(el, {y: 30, opacity:0, duration:0.7, scrollTrigger:{trigger:el, start:"top 85%"}});
-    });
-
-    // subtle parallax on hero background (mouse)
-    const hero = document.querySelector('.hero');
-    hero && hero.addEventListener('mousemove', (e)=>{
-      const rect = hero.getBoundingClientRect();
-      const mx = (e.clientX - rect.left) / rect.width;
-      gsap.to('#lottieHero', {duration:0.6, x: (mx-0.5)*12, ease:"power1.out"});
-    });
   });
 
-  // service toggle (simple)
-  function toggleService(el){
-    const active = el.classList.contains('active');
-    document.querySelectorAll('.service-item').forEach(it=>it.classList.remove('active'));
-    if(!active) el.classList.add('active');
-  }
+  // service toggle
+  function toggleService(el){const active = el.classList.contains('active');document.querySelectorAll('.service-item').forEach(it=>it.classList.remove('active'));if(!active) el.classList.add('active');}
 
-// Contact form (mailto fallback)
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  // contact form: send to Netlify Function instead of mailto
+  document.getElementById('contactForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const f = new FormData(this);
-    const subject = encodeURIComponent('Application from ' + (f.get('fullname')||''));
-    const body = encodeURIComponent(
-      'Name: '+(f.get('fullname')||'')+'\nEmail: '+(f.get('email')||'')+'\nPhone: '+(f.get('phone')||'')+'\nCountry: '+(f.get('country')||'')+'\nVisaType: '+(f.get('visaType')||'')+'\n\nMessage:\n'+(f.get('message')||'')
-    );
-    window.location.href = 'mailto:support@globalhireassist.com?subject='+subject+'&body='+body;
+    const payload = {
+      fullname: f.get('fullname'),
+      email: f.get('email'),
+      phone: f.get('phone'),
+      country: f.get('country'),
+      visaType: f.get('visaType'),
+      message: f.get('message')
+    };
+
+    try{
+      const res = await fetch('/.netlify/functions/send-email', {
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      if(res.ok){ alert('Application sent — we will contact you shortly.'); this.reset(); }
+      else { const text = await res.text(); console.error(text); alert('Failed to send.'); }
+    }catch(err){console.error(err);alert('Failed to send.');}
   });
-    "script>
-  // Blog publish demo (local only)
-  function publishPost(){
-    const title = document.getElementById('postTitle').value;
-    const body = document.getElementById('postBody').value;
-    if(!title || !body) return alert('Please add title and excerpt');
-    const posts = document.getElementById('posts');
-    const node = document.createElement('div');
-    node.className = 'post-card';
-    node.innerHTML = '<h4 style="margin:0 0 8px">'+title+'</h4><p style="color:var(--muted)">'+body+'</p>';
-    posts.prepend(node);
-    document.getElementById('postTitle').value=''; document.getElementById('postBody').value='';
-  }
 
-  // publish post (demo)
-  window.publishPost = publishPost;
-
-  // contact via whatsapp helper
-  function contactViaWhatsApp(){
-    const phone = '14472763403'; // replace if needed
-    const text = encodeURIComponent('Hello Global Hire Assist — I would like help with my visa application.');
-    window.open('https://wa.me/'+phone+'?text='+text,'_blank');
-  }
-  window.contactViaWhatsApp = contactViaWhatsApp;
-
+  function contactViaWhatsApp(){const phone='14472763403';const text=encodeURIComponent('Hello Global Hire Assist — I would like help with my visa application.');window.open('https://wa.me/'+phone+'?text='+text,'_blank');}
 </script>
 
+</body>
+</html>
+<!-- FILE: /admin/index.html -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Netlify CMS — Global Hire Assist</title>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </head>
+  <body>
+    <!-- This file bootstraps Netlify CMS. Keep it at /admin/index.html -->
+    <script>
+      // Optional: you can register custom widgets or previews here
+    </script>
+    <div id="nc-root"></div>
+  </body>
+</html>
+
+
+<!-- FILE: /admin/config.yml -->
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+site_url: "https://your-site.netlify.app"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Order", name: "order", widget: "number"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Role/Location", name: "role", widget: "string"}
+      - {label: "Quote", name: "quote", widget: "text"}
+
+  - name: "countries"
+    label: "Countries"
+    folder: "content/countries"
+    create: true
+    fields:
+      - {label: "Country Name", name: "name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "content/homepage.yml"
+        label: "Hero + Counters"
+        name: "hero"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Subheadline", name: "subheadline", widget: "text"}
+          - {label: "Counters", name: "counters", widget: "list", fields:[{label: 'Label', name: 'label', widget:'string'},{label:'Number', name:'number', widget:'number'}]}
+
+publish_mode: editorial_workflow
+
+
+<!-- FILE: /content/blog/sample-post.md -->
+---
+title: "How to prepare for your visa interview"
+date: 2025-01-01T10:00:00
+author: "Global Hire Assist"
+thumbnail: "/uploads/visa-interview.jpg"
+excerpt: "Step-by-step guide to prepare confidently for your visa interview."
+---
+
+Your post content goes here. Netlify CMS will let you edit this file through /admin.
+
+
+<!-- FILE: /templates/post.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{title}}</title>
+</head>
+<body>
+  <article>
+    <h1>{{title}}</h1>
+    <p><em>By {{author}} on {{date}}</em></p>
+    <div>{{{body}}}</div>
+  </article>
 </body>
 </html>
