@@ -1,30 +1,61 @@
 backend:
   name: git-gateway
   branch: main
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
-media_folder: "overseas-jobs-safe.webp
-job-verification.webp
-avoid-job-scams.webp
-documents-checklist.webp
-visa-process.webp
-medical-checkup.webp
-visa-consultation.webp
-success-abroad.webp"
-public_folder: "/images/uploads"
+site_url: "https://your-site.netlify.app"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "posts"
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-backend:
-  name: git-gateway
-  branch: main
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Order", name: "order", widget: "number"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Role/Location", name: "role", widget: "string"}
+      - {label: "Quote", name: "quote", widget: "text"}
+
+  - name: "countries"
+    label: "Countries"
+    folder: "content/countries"
+    create: true
+    fields:
+      - {label: "Country Name", name: "name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "content/homepage.yml"
+        label: "Hero + Counters"
+        name: "hero"
+        fields:
+          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+          - {label: "Headline", name: "headline", widget: "string"}
+          - {label: "Subheadline", name: "subheadline", widget: "text"}
+          - {label: "Counters", name: "counters", widget: "list", fields:[{label: 'Label', name: 'label', widget:'string'},{label:'Number', name:'number', widget:'number'}]}
